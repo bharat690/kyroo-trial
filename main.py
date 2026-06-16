@@ -37,6 +37,7 @@ VERIFY_TOKEN = os.getenv(
 )
 
 
+
 def send_whatsapp_message(
     phone_number,
     message
@@ -179,10 +180,9 @@ async def receive_message(
             user_message
         )
 
-        ai_reply = (
-            generate_reply(
-                user_message
-            )
+        ai_reply = generate_reply(
+             user_message=user_message,
+            user_id=sender_phone
         )
 
         print(
